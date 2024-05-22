@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/text_header"
+        android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:gravity="center_horizontal|center_vertical"
@@ -19,100 +19,89 @@
         android:textColor="@color/white"
         android:text="@string/title"/>
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/layout_content"
+        android:layout_below="@+id/text_header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="32dp"
+        android:layout_height="match_parent"
         android:padding="16dp">
+
         <EditText
             android:id="@+id/edit_distance"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_marginTop="16dp"
             android:hint="@string/placeholder_distance"
             android:inputType="numberDecimal" />
         <TextView
+            android:id="@+id/text_label_quilometros"
+            android:layout_below="@+id/edit_distance"
+            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/label_distance" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:padding="16dp">
         <EditText
             android:id="@+id/edit_price"
+            android:layout_below="@+id/text_label_quilometros"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="@string/placeholder_price"
             android:inputType="numberDecimal" />
         <TextView
+            android:id="@+id/text_label_price"
+            android:layout_below="@+id/edit_price"
+            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/label_price" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:padding="16dp">
         <EditText
             android:id="@+id/edit_autonomy"
+            android:layout_below="@+id/text_label_price"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="@string/placeholder_autonomy"
-            android:inputType="numberDecimal"
-            />
+            android:inputType="numberDecimal" />
         <TextView
+            android:id="@+id/text_label_autonomy"
+            android:layout_below="@+id/edit_autonomy"
+            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/label_autonomy"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_marginTop="16dp">
+            android:text="@string/label_autonomy" />
 
         <TextView
+            android:id="@+id/text_total_value_label"
+            android:layout_below="@+id/text_label_autonomy"
+            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
             android:text="@string/total_value_label"
             android:textAllCaps="true"
-            android:textSize="16sp"
-            />
-
+            android:textSize="16sp" />
         <TextView
             android:id="@+id/text_total_value"
+            android:layout_below="@+id/text_total_value_label"
+            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/total_value"
             android:textAllCaps="true"
             android:textSize="32sp"
             android:textColor="@color/gasto_total_color"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="8dp" />
+        <Button
+            android:id="@+id/button_calculate"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:layout_margin="24dp"
+            android:text="@string/calculate"
+            android:textSize="20sp"
+            android:backgroundTint="@color/black"
             />
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/button_calculate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:layout_margin="24dp"
-        android:text="@string/calculate"
-        android:textSize="20sp"
-        android:backgroundTint="@color/black"
-        />
-
-</LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
